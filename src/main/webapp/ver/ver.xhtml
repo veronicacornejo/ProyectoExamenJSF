@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <ui:define name="titulo">
+            <title>Ver Productos</title>
+        </ui:define>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Bootstrap CSS -->
+        <h:outputStylesheet library="CSS" name="bootstrap.min.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/Plantillas/principalPlantilla.xhtml">
+            <ui:define name="contenido">
+
+                <div class="container"> 
+                    <div class="row" >
+                        <div class="mt-4 p-5 bg-primary text-white rounded"><center><h1>Ver Productos</h1></center></div>
+                    </div>
+                    <div class="row">
+                        <h:dataTable var="prod" value = "#{gestorp.productos}" border="1">
+                            <h:column>
+                                <f:facet name="header">Nombre</f:facet>
+                                    #{prod.nombre}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Distribuidora</f:facet>
+                                    #{prod.distribuidora}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Detalles</f:facet>
+                                <h:commandLink value="Ver mas" action="#{gestorp.verProducto(prod)}"></h:commandLink>
+                            </h:column>
+                        </h:dataTable>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>

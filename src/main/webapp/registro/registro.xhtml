@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <ui:define name="titulo">
+            <title>Registro Producto</title>
+        </ui:define>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Bootstrap CSS -->
+        <h:outputStylesheet library="CSS" name="bootstrap.min.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/Plantillas/principalPlantilla.xhtml">
+            <ui:define name="contenido">
+
+                <div class="container"> 
+                    <div class="row" >
+                        <div class="mt-4 p-5 bg-primary text-white rounded"><center><h1>Registro de Productos</h1></center></div>
+                    </div>
+                    <div class="row">
+                        <br/><br/>
+                        <h:form>
+                            <center>
+                            <table align="rigth">
+                                <tr>
+                                    <td>Código:</td>
+                                    <td><h:inputText value="#{gestorp.producto.codigo}"></h:inputText></td>
+                                </tr>
+                                <tr>
+                                    <td>Nombre Producto:</td>
+                                    <td><h:inputText value="#{gestorp.producto.nombre}"></h:inputText></td>
+                                </tr>
+                                <tr>
+                                    <td>Distribuidora:</td>
+                                    <td><h:inputText value="#{gestorp.producto.distribuidora}"></h:inputText></td>
+                                </tr>
+                                <tr>
+                                    <td>Distribuidora:</td>
+                                    <td><h:inputText value="#{gestorp.producto.precio}"></h:inputText></td>
+                                </tr>
+                                <tr>
+                                    <td>Precio</td>
+                                    <td><h:inputText value="#{gestorp.producto.cantidad}"></h:inputText></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <h:commandButton value="Registrar Producto" action="#{gestorp.registrar()}"></h:commandButton>
+                                    </td>
+                                </tr>
+                            </table>
+                            </center>
+                        </h:form>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>

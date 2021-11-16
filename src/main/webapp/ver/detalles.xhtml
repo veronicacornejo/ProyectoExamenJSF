@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <ui:define name="titulo">
+            <title>Ver Detalles del Producto</title>
+        </ui:define>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Bootstrap CSS -->
+        <h:outputStylesheet library="CSS" name="bootstrap.min.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="/Plantillas/principalPlantilla.xhtml">
+            <br/><br/>
+            <br/>
+            <ui:define name="contenido">
+                <div class="container"> 
+                    <div class="row" >
+                        <div class="mt-4 p-5 bg-primary text-white rounded"><center><h1>Ver Detalle del Producto</h1></center></div>
+                    </div>
+                    <div class="row">
+                        <center>
+                            <table class="table table-bordered">
+                            <tr>
+                                <td>Código</td>
+                                <td>#{gestorp.producto.codigo}</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre</td>
+                                <td>#{gestorp.producto.nombre}</td>
+                            </tr>
+                            <tr>
+                                <td>Distribuidora</td>
+                                <td>#{gestorp.producto.distribuidora}</td>
+                            </tr>
+                            <tr>
+                                <td>Precio</td>
+                                <td>#{gestorp.producto.precio}</td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad</td>
+                                <td>#{gestorp.producto.cantidad}</td>
+                            </tr>
+                        </table>
+                        </center>
+                    </div>
+                    </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
